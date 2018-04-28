@@ -1,7 +1,13 @@
 package bussines_layer;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idTask;  
 	private Team team;		
 	private String product; 

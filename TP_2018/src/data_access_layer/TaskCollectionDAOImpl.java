@@ -8,9 +8,11 @@ import bussines_layer.Task;
 public class TaskCollectionDAOImpl implements DAOTask {
 		
 		List<Task>taskList = new ArrayList<Task>();
+		
+		public Synchronize current = new Synchronize();
 
 		public void register(Task task) {
-			taskList.clear();
+			
 			
 			if(exists(task)==false) {
 				taskList.add(task);
@@ -23,20 +25,18 @@ public class TaskCollectionDAOImpl implements DAOTask {
 			
 		}
 		
-		public void synchronize() {
-			Synchronize.saveTask(taskList);
-		}
-		public void imprimirTask() {
-			try {
-				Synchronize.printTask();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		public void saveAllTasks() {
+			
+		current.saveTasks(taskList);
+		
 		}
 		
-		public void leerTexto() {
-			Synchronize.leertext();
+		public void recoverTasks() {
+			current.readText();
+		}
+		
+		public void synchronize() {
+			 
 
 		}
 		

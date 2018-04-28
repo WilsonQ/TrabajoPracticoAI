@@ -1,6 +1,8 @@
 package bussines_layer;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
 	
 	private String longitude;
 	private String latitude;
